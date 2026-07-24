@@ -23,11 +23,14 @@ jobs:
       - name: 빌드
         run: npm run build
 
+      - name: lftp 설치
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
       - name: FTP로 업로드
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /www/
+        run: |
+          lftp -c "
+          set ftp:ssl-allow no;
+          set ftp:passive-mode true;
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+          mirror -R --delete --verbose ./dist/ /www/
+          "
