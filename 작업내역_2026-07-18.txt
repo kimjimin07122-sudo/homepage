@@ -1,0 +1,133 @@
+SPACE-AI Lab → AICES Lab 홈페이지 작업 내역 (2026-07-18)
+──────────────────────────────────────────────
+오늘 세션에서 진행한 전체 작업을 순서대로 정리한 기록입니다.
+
+
+[1] Research 페이지 — "AI 모델 및 데이터 분석" 카드 설명 수정
+  src/data/research.js
+  변경 전: "생성형·시계열·멀티모달 AI를 비롯한 데이터 기반 지능 모델을 연구합니다."
+  변경 후: "생성형·시계열·멀티모달 AI, 의료 · 보건 데이터 AI를 비롯한 데이터 기반
+           지능 모델을 연구합니다."
+  → Home/About/Research 페이지 전반에서 공용으로 쓰이는 데이터라 한 번에 반영.
+
+
+[2] Contact 페이지 — "Lab" 항목 추가
+  src/data/site.js, src/pages/Contact.jsx
+  Office 항목 아래에 실험실 위치 두 곳을 추가:
+    - 공과대학 3호관 (C111)
+    - 자연과학대학교 1호관 (9B39)
+  Contact.jsx 의 items 목록 렌더링 로직에 여러 값을 나열할 수 있는 list 타입을
+  추가해서 처리.
+
+
+[3] Join(지원 안내) 페이지 신설
+  - src/data/site.js: navLinks 에 Join 추가 (처음엔 Contact 뒤 → 이후 [10]에서
+    Contact 앞으로 재배치)
+  - src/data/join.js 신규 생성: 환영 문구(welcome), 연구실에서 경험할 수 있는 것
+    (experience), 제출 서류(documents), 추천 이메일 제목(emailSubject), 안내
+    문구(notes)
+  - src/pages/Join.jsx 신규 생성: 환영 문구 → 연구실 경험 → 지원 방법 구조로 시작
+  - 초안에 있던 "이메일로 지원하기" 버� 제거 (사용자 요청)
+  - 제출 서류 4개 목록을 2×2 그리드로 변경
+
+
+[4] FAQ를 Contact → Join 페이지로 이동
+  - src/pages/Contact.jsx 에서 FAQ 섹션과 관련 import 제거
+  - src/pages/Join.jsx 의 "지원 방법" 섹션 위쪽에 FAQ 섹션 추가
+  - 배경색(tint) 교대 순서를 맞춰 섹션 리듬 조정
+
+
+[5] 문단 줄바꿈(word-break) 개선 — 여러 라운드에 걸쳐 진행
+  - src/App.css `.app` 에 word-break: keep-all, overflow-wrap: break-word,
+    text-wrap: pretty 추가 → 사이트 전역 문단에서 마지막 줄에 단어 하나만
+    남는 "고아 줄" 현상 방지
+  - Hero 소개문구(.hero__desc) max-width 620px → 700px
+  - Home 맨 아래 배너 문구(.banner__inner) max-width 700px → 820px
+  - About 소개문단(.about-intro) max-width 780px → 820px, Join 전용으로
+    .about-intro--wide(1050px) 추가
+  - Research 페이지 헤더 설명(.page-header__desc) max-width 620px → 900px
+  - "Physical AI", "시스템 통합" 처럼 붙어 있어야 하는 두 단어 사이에 줄바꿈
+    없는 공백(non-breaking space) 적용
+    · src/data/site.js — lab.intro, lab.introSub
+    · src/pages/About.jsx — goals 배열의 "실제 환경 중심" 카드 설명
+  - Home 모집 문구(.recruit__desc) max-width 600px → 700px ("Physical AI"가
+    갈라지던 문제)
+
+
+[6] Footer 주소 표기 수정
+  src/components/Footer.jsx
+  주소를 "{contact.address}, {contact.building}" 형태로 합쳐서
+  "제주특별자치도 제주시 제주대학로 102, 공과대학 3호관 C111" 로 표시.
+
+
+[7] 전체 브랜드명 변경 — SPACE-AI Lab → AICES Lab
+  "AICES Lab : Autonomous Intelligence in Complex Engineering Systems" 로 사이트
+  전체 일괄 변경.
+  - src/data/site.js: lab.short, lab.nameEn, lab.tagline, lab.intro, acronym
+    배열(A-I-in-C-E-S 구조로 재구성)
+  - src/pages/Home.jsx: 히어로 워드마크 — 기존 "SPACE"+"-AI" 강조 방식에서
+    "AI"를 앞쪽에서 강조하는 "AICES" 로 변경, 호버 시 전체 명칭 애니메이션도
+    새 acronym 기준으로 갱신
+  - src/components/Footer.jsx: 워드마크 동일하게 변경
+  - src/pages/Team.jsx, src/pages/Publications.jsx, src/data/join.js(이메일
+    제목 템플릿 [SPACE-AI 지원] → [AICES 지원]), src/data/news.js(개설 공지)
+  - index.html: 브라우저 탭 제목 · 메타 설명
+  - App.css 주석 정리
+
+
+[8] Vercel 배포
+  - 방식: GitHub 연동 없이 `npm run build` 로 만든 dist 폴더만 Vercel CLI로
+    직접 배포
+  - 프로젝트: kimjimin07122-sudos-projects/homepage
+  - 문제: dist 안에서 매번 `vercel --prod` 실행 시, `npm run build` 가 dist
+    폴더를 통째로 비우고 다시 만들면서 그 안에 있던 `.vercel` 프로젝트 연결
+    정보도 같이 삭제되어 배포할 때마다 "Which project?" 를 다시 물어봄
+  - 해결: 프로젝트 루트(temp 폴더)에 `vercel link --yes --team
+    kimjimin07122-sudos-projects --project homepage` 로 기존 프로젝트를 연결
+    (.vercel, .env* 는 .gitignore 에 자동 추가됨). 루트는 빌드할 때 건드리지
+    않는 위치라 연결 정보가 계속 유지됨
+  - 이후 배포 절차: 프로젝트 루트에서
+      npm run build
+      npx vercel deploy dist --prod
+  - 배포 후 메인/서브 라우트(SPA 새로고침 포함) 200 정상, vercel.json 의 SPA
+    리라이트 규칙도 정상 작동 확인
+
+
+[9] Join 페이지 — 제출 서류 4개 박스 크기 통일
+  src/App.css `.join-apply__docs li`
+  min-height, flex 세로 중앙 정렬, padding 추가 → 텍스트 길이가 달라 들쭉날쭉
+  하던 4개 박스 높이를 84px 로 통일, 아래 이메일 제목 박스와도 비슷한 크기로
+  맞춤.
+
+
+[10] 요청 6건 일괄 반영
+  1. Research: 카드가 홀수(5개)일 때 마지막 카드를 가운데로 정렬하던 CSS
+     규칙을 되돌림(원래의 좌측 정렬 배열로 복귀), "세부 연구 성과와
+     프로젝트는 추후 업데이트될 예정입니다" 안내 문구 삭제
+  2. Team: 포닥(박사후연구원) 합류 예정 박스 위에 구분선(border-top) 추가
+  3. News: 처음에 임시로 넣었던 공지 2건("SPACE-AI Lab 개설", "대학원생 ·
+     학부연구생 · 박사후연구원을 모집합니다") 삭제. 실제 프로젝트 기반 모집
+     공고 3건만 남김
+  4. Navbar: 순서를 News → Join → Contact 로 변경(Join이 Contact보다 앞)
+  5. Join: "지원 방법" 섹션을 Experience 섹션 바로 다음으로 재배치(그 뒤에
+     FAQ), 안내 문구(지원 가능 과정 · 국제학생 안내)를 섹션 맨 위로 이동.
+     배경색 tint 교대도 재조정(환영-plain / 경험-tint / 지원방법-plain /
+     FAQ-tint)
+  6. Join: FAQ 하단에 "찾으시는 답변이 없으신가요?" 문구 + Contact 페이지로
+     연결되는 "문의하기" 버튼 추가
+  7. faq.js: "연구실 지원 방법이 궁금합니다" 항목 삭제(Join 페이지에 전용
+     섹션이 생겨 중복이라), 나머지 답변 중 미래형 표현("~할 예정입니다")을
+     현재형("~합니다")으로 다듬음
+
+
+[11] FAQ 내용 재검토 및 수정
+  explain.txt 원문과 사이트 전반 내용을 비교 검토한 뒤 다음을 수정:
+  - "어떤 학생들을 주로 선발하고자 하나요?": 전공 배경 나열을 Join 페이지
+    환영 문구와 동일하게 통일("인공지능, 기계/우주항공, 전기전자, 로봇,
+    제어, 의료, 반도체 및 재료")
+  - "모집 분야 및 인원은 어떻게 되나요?": 낱개 키워드로 나열하던 연구
+    분야를 Research 페이지의 정식 5개 분야 명칭으로 교체. 현재 실제로
+    모집 중인 프로젝트 3건(보건의료 데이터 기반 AI 예측모델, 드론 운용
+    데이터 기반 AI 예측모델, AI 임베딩·경량화)을 언급하는 문장을 추가하고
+    공지사항 페이지로 연결
+  (자세한 변경 전/후 문구는 별도 요청 시 다시 정리 가능)
