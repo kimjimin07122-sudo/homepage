@@ -26,6 +26,20 @@ jobs:
       - name: lftp 설치
         run: sudo apt-get update && sudo apt-get install -y lftp
 
+      - name: FTP 연결 진단
+        run: |
+          lftp -c "
+          debug 5;
+          set ftp:ssl-allow no;
+          set ftp:passive-mode true;
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+          pwd;
+          ls -la;
+          cd /www;
+          pwd;
+          ls -la;
+          "
+
       - name: FTP로 업로드
         run: |
           lftp -c "
