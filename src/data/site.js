@@ -237,6 +237,7 @@ export const navLinks = [
     ],
   },
   { to: '/news', label: 'News' },
+  { to: '/photo', label: 'Gallery' },
   { to: '/join', label: 'Join' },
   { to: '/contact', label: 'Contact' },
 ]

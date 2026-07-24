@@ -330,27 +330,27 @@ export const members = [
     photo: photoHanJiwon,
     email: '',
   },
+]
+
+// ── 전문인력 (박사후연구원 · 스태프) ──
+export const postdocs = [
+  {
+    name: 'Arshad Farhad, PhD',
+    role: { ko: '박사후연구원', en: 'Post-doctoral Researcher' },
+    affiliation: 'SPACE-AI Lab',
+    period: 'Aug. 2026 – Present',
+    previous: {
+      affiliation: 'Assistant Professor, Bahria University, Islamabad, Pakistan',
+      period: 'Sept. 2024 – July 2026',
+    },
+    photo: photoArshad,
+    email: '',
+  },
   {
     name: '김륜희',
     nameEn: 'Kim Ryunhui',
     role: { ko: '스태프', en: 'Staff' },
     group: 'Staff',
-    email: '',
-  },
-]
-
-// ── 박사후연구원 ──
-export const postdocs = [
-  {
-    name: 'Arshad Farhad, PhD',
-    role: { ko: '박사후연구원', en: 'Post-doctoral Researcher' },
-    affiliation: 'Assistant Professor, Bahria University, Islamabad, Pakistan',
-    period: 'Sept. 2024 – July 2026',
-    note: {
-      ko: '2026년 8월부터 SPACE-AI Lab 박사후연구원으로 합류합니다.',
-      en: 'Joining SPACE-AI Lab as a Postdoctoral Researcher from Aug. 2026.',
-    },
-    photo: photoArshad,
     email: '',
   },
 ]

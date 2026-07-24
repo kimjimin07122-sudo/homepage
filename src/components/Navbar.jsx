@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navLinks, lab } from '../data/site'
-import { useLang } from '../lang/LanguageContext'
+import { useLang, useT } from '../lang/LanguageContext'
 import logo from '../data/logo1.gif'
 
 export default function Navbar() {
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null) // 모바일에서 펼쳐진 서브메뉴 label
   const location = useLocation()
   const { lang, toggle } = useLang()
+  const t = useT()
 
   // 라우트 이동 시 메뉴 닫기
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function Navbar() {
                   }
                   aria-expanded={openMenu === link.label}
                 >
-                  {link.label}
+                  {t(link.label)}
                   <i className="fa-solid fa-chevron-down nav__caret"></i>
                 </button>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
                         `nav__sublink ${isActive ? 'is-active' : ''}`
                       }
                     >
-                      {child.label}
+                      {t(child.label)}
                     </NavLink>
                   ))}
                 </div>
@@ -79,7 +80,7 @@ export default function Navbar() {
                   `nav__link ${isActive ? 'is-active' : ''}`
                 }
               >
-                {link.label}
+                {t(link.label)}
               </NavLink>
             ),
           )}

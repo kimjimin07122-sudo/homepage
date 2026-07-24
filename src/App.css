@@ -1212,6 +1212,126 @@ html[lang='en'] .page-header__title {
   color: #96701c;
 }
 
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.photo-card {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.18s ease;
+}
+
+.photo-card:hover {
+  border-color: var(--navy);
+}
+
+.photo-card__img-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  padding: 10px 14px;
+  min-height: 1.4em;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.photo-card--empty {
+  cursor: default;
+  background: var(--bg-tint);
+  border-style: dashed;
+}
+
+.photo-card--empty:hover {
+  border-color: var(--line-strong);
+}
+
+.photo-card--empty .photo-card__img-wrap {
+  display: grid;
+  place-items: center;
+  color: var(--line-strong);
+  font-size: 1.6rem;
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.pager__btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--body);
+  font-size: 0.86rem;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+}
+
+.pager__btn:hover {
+  border-color: var(--navy);
+}
+
+.pager__btn.is-active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.photo-lightbox__panel {
+  position: relative;
+  max-width: min(90vw, 900px);
+  max-height: 88vh;
+}
+
+.photo-lightbox__panel img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius);
+  object-fit: contain;
+}
+
+.photo-lightbox__date {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.photo-lightbox__close {
+  top: -14px;
+  right: -14px;
+  background: #fff;
+}
+
 .news__tag--논문 {
   border-color: var(--lav);
   color: #5b45c9;
@@ -1723,6 +1843,7 @@ html[lang='en'] .page-header__title {
 .people-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  align-items: start;
   gap: 20px;
 }
 
@@ -1882,10 +2003,19 @@ html[lang='en'] .page-header__title {
   font-variant-numeric: tabular-nums;
 }
 
-.person__note {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 0.82rem;
+.person__previous {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.person__previous .person__affiliation,
+.person__previous .person__period {
+  margin-top: 0;
+}
+
+.person__previous .person__period {
+  margin-top: 4px;
 }
 
 .person__bio {

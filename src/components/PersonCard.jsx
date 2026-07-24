@@ -32,7 +32,17 @@ export default function PersonCard({ person, featured = false }) {
           <p className="person__affiliation">{t(person.affiliation)}</p>
         )}
         {person.period && <p className="person__period">{t(person.period)}</p>}
-        {person.note && <p className="person__note">{t(person.note)}</p>}
+
+        {person.previous && (
+          <div className="person__previous">
+            {person.previous.affiliation && (
+              <p className="person__affiliation">{t(person.previous.affiliation)}</p>
+            )}
+            {person.previous.period && (
+              <p className="person__period">{t(person.previous.period)}</p>
+            )}
+          </div>
+        )}
 
         {person.bio && featured && <p className="person__bio">{t(person.bio)}</p>}
 

@@ -9,8 +9,8 @@ import { useT } from '../lang/LanguageContext'
 const GROUPS = [
   {
     key: 'postdoc',
-    label: { ko: '박사후연구원', en: 'Post-doc' },
-    eyebrow: 'Post-doc',
+    label: { ko: '전임 연구인력', en: 'Research Staff' },
+    eyebrow: 'Research Staff',
     people: postdocs,
   },
   {
