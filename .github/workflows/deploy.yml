@@ -32,9 +32,10 @@ jobs:
           debug 5;
           set ftp:ssl-allow no;
           set ftp:passive-mode true;
+          set ftp:use-host no;
           open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
           ls -la;
-          cd www;
+          cd /www;
           ls -la;
           "
 
@@ -43,6 +44,7 @@ jobs:
           lftp -c "
           set ftp:ssl-allow no;
           set ftp:passive-mode true;
+          set ftp:use-host no;
           open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-          mirror -R --delete --verbose ./dist/ www/
+          mirror -R --delete --verbose ./dist/ /www/
           "
