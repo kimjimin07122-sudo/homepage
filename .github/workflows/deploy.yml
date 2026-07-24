@@ -1,0 +1,50 @@
+name: Deploy to Cafe24
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: Node.js 설치
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 패키지 설치
+        run: npm ci
+
+      - name: 빌드
+        run: npm run build
+
+      - name: lftp 설치
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: FTP 연결 진단
+        run: |
+          lftp -c "
+          debug 5;
+          set ftp:ssl-allow no;
+          set ftp:passive-mode true;
+          set ftp:use-host no;
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+          ls -la;
+          cd /www;
+          ls -la;
+          "
+
+      - name: FTP로 업로드
+        run: |
+          lftp -c "
+          set ftp:ssl-allow no;
+          set ftp:passive-mode true;
+          set ftp:use-host no;
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+          mirror -R --delete --verbose ./dist/ /www/
+          "
