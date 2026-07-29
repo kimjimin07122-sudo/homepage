@@ -721,6 +721,11 @@ html[lang='en'] .page-header__title {
   color: #1c3f86;
 }
 
+/* 예외: 소식 상세 페이지(article) — 실제 헤드라인이라 강제 강조색을 적용하지 않음 */
+html[lang='en'] .page-header--article .page-header__title {
+  color: var(--navy);
+}
+
 .section-heading__desc {
   margin: 14px 0 0;
   max-width: 600px;
@@ -1212,6 +1217,47 @@ html[lang='en'] .page-header__title {
   color: #96701c;
 }
 
+.news__tag--소식 {
+  border-color: var(--sky);
+  color: var(--blue-600);
+}
+
+/* 클릭 가능한 소식 행 — <a>(Link)에 .news 를 그대로 재사용 */
+.news--link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  padding-right: 18px;
+}
+
+.news__arrow {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: #1f9d7c;
+  transition: transform 0.16s ease;
+}
+
+.news--link:hover .news__arrow {
+  transform: translateX(3px);
+}
+
+/* News 페이지 — 소식 섹션과 모집 섹션을 배경색 대신 구분선으로만 나눔 */
+/* 소식 상세 페이지 본문 */
+.article-body {
+  margin-top: 28px;
+}
+
+.article-body p {
+  margin: 0 0 18px;
+  color: var(--body);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1326,10 +1372,25 @@ html[lang='en'] .page-header__title {
   font-size: 0.9rem;
 }
 
+/* 배경 박스 없이 사진 우측 상단 안쪽에 겹쳐 놓는다.
+   어떤 사진 위에서도 보이도록 흰 X + 검은 테두리(text-shadow 외곽선) */
 .photo-lightbox__close {
-  top: -14px;
-  right: -14px;
-  background: #fff;
+  top: 6px;
+  right: 6px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #fff;
+  font-size: 1.05rem;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.photo-lightbox__close:hover {
+  color: #fff;
 }
 
 .news__tag--논문 {

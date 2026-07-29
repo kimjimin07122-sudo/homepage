@@ -14,6 +14,7 @@ import Publications from './pages/Publications'
 import Professor from './pages/Professor'
 import Team from './pages/Team'
 import News from './pages/News'
+import NewsArticle from './pages/NewsArticle'
 import Photo from './pages/Photo'
 import Contact from './pages/Contact'
 import Join from './pages/Join'
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/people/professor" element={<Professor />} />
             <Route path="/people/team" element={<Team />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/photo" element={<Photo />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/join" element={<Join />} />
