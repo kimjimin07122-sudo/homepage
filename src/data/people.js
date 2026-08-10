@@ -17,6 +17,7 @@ import photoKoYongseok from './people/ko-yongseok.jpg'
 import photoKimJimin from './people/kim-jimin.jpg'
 import photoByeonSua from './people/byeon-sua.jpg'
 import photoHanJiwon from './people/han-jiwon.jpg'
+import photoKimRyunhee from './people/kim-ryunhee.jpg'
 
 export const profilePlaceholder = profileSample
 
@@ -348,9 +349,10 @@ export const postdocs = [
   },
   {
     name: '김륜희',
-    nameEn: 'Kim Ryunhui',
+    nameEn: 'Kim Ryunhee',
     role: { ko: '스태프', en: 'Staff' },
     group: 'Staff',
+    photo: photoKimRyunhee,
     email: '',
   },
 ]
