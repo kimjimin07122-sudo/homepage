@@ -161,6 +161,25 @@ export default function Professor() {
             </ul>
           </div>
 
+          {/* ── 공동저자 논문 ── */}
+          <div className="prof-block" data-reveal>
+            <h3 className="prof-block__title">
+              <i className="fa-solid fa-file-lines"></i> {t('공동저자 논문', 'Co-authored Publications')}
+              <span className="prof-block__sub">{t('SCI(E), Co-author · selected', 'SCI(E), co-author · selected')}</span>
+            </h3>
+            <ul className="paper-list">
+              {p.coAuthorPublications.map((pub, i) => (
+                <li className="paper" key={i}>
+                  <p className="paper__title">{pub.title}</p>
+                  <p className="paper__authors">{pub.authors}</p>
+                  <p className="paper__venue">
+                    {pub.venue}, {pub.year}.
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* ── 주요 특허 ── */}
           <div className="prof-block" data-reveal>
             <h3 className="prof-block__title">
@@ -204,6 +223,19 @@ export default function Professor() {
             <ul className="conf-list">
               {p.conferences.map((c, i) => (
                 <li key={i}>{c}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── 국내 학술지 논문 ── */}
+          <div className="prof-block" data-reveal>
+            <h3 className="prof-block__title">
+              <i className="fa-solid fa-file-lines"></i> {t('국내 학술지 논문', 'Domestic Journal Publications')}
+              <span className="prof-block__sub">{t('selected', 'selected')}</span>
+            </h3>
+            <ul className="conf-list">
+              {p.domesticPublications.map((d, i) => (
+                <li key={i}>{d}</li>
               ))}
             </ul>
           </div>

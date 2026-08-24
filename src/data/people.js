@@ -120,14 +120,12 @@ export const professor = {
       items: {
         ko: [
           'Selection Committee Member (International Review Panel), NSERC–NSTC Joint Research Program on Semiconductors and Artificial Intelligence — Natural Sciences and Engineering Research Council of Canada (NSERC) & National Science and Technology Council (NSTC), Taiwan, 2026',
-          'Corresponding Member (Recommended), International Academy of Astronautics (IAA) | Jan. 2026',
           'Co-chair, IAA SpaceAI Conference (South Korea) | 2025 – 2026',
           '한국항공우주학회 평의원 | 2025.09 – 현재',
           '한국항공우주학회 항공우주정보AI활용 부문위원회 간사 | 2023.03 – 2025.11',
         ],
         en: [
           'Selection Committee Member (International Review Panel), NSERC–NSTC Joint Research Program on Semiconductors and Artificial Intelligence — Natural Sciences and Engineering Research Council of Canada (NSERC) & National Science and Technology Council (NSTC), Taiwan, 2026',
-          'Corresponding Member (Recommended), International Academy of Astronautics (IAA) | Jan. 2026',
           'Co-chair, IAA SpaceAI Conference (South Korea) | 2025 – 2026',
           'Board Member, Korean Society for Aeronautical & Space Sciences (KSAS) | Sep 2025 – Present',
           'Secretary, Aerospace Information & AI Applications Committee, KSAS | Mar 2023 – Nov 2025',
@@ -175,6 +173,13 @@ export const professor = {
   // 주요 논문 (SCI(E), 주저자 기준, selected) — 영문 공통
   publications: [
     {
+      authors: 'H. Ahn, J. Yu, C. Lee',
+      title:
+        'A measurement protocol and multimodal UAV telemetry dataset for fault observability under real-flight and safety-constrained test conditions',
+      venue: 'Measurement (Article 122820)',
+      year: 2026,
+    },
+    {
       authors: 'Hyojung Ahn',
       title:
         'On-device generative anomaly detection for unmanned aerial vehicle telemetry using memristor analog compute-in-memory',
@@ -210,6 +215,14 @@ export const professor = {
       year: 2025,
     },
     {
+      authors:
+        'Wenting Zheng, Keonwoo Park, Joo-Hong Lee, Hae-Jun Seok, Sung-Kwang Jung, Seung-Gu Choi, Han-Ki Kim, Hyojung Ahn, Jin-Wook Lee',
+      title:
+        'Balancing structural formability and lattice microstrain in methylammonium-free wide bandgap perovskites',
+      venue: 'Journal of Physics: Energy',
+      year: 2025,
+    },
+    {
       authors: 'Hyojung Ahn, S. Chung',
       title:
         'Deep learning-based anomaly detection for individual drone vehicles performing swarm missions',
@@ -228,6 +241,13 @@ export const professor = {
       title:
         'Enhanced Short-term Prediction of Solar Radiation Using HRNet Model with Geostationary Satellite Data',
       venue: 'IEEE Geoscience and Remote Sensing Letters',
+      year: 2024,
+    },
+    {
+      authors: 'Seonggwang Jung, et al., Hyojung Ahn',
+      title:
+        'Effects of MgF₂ anti-reflection coating on optical losses in metal halide perovskite solar cells',
+      venue: 'Nanotechnology',
       year: 2024,
     },
     {
@@ -258,6 +278,57 @@ export const professor = {
       venue: 'International Journal of Aeronautical and Space Sciences',
       year: 2018,
     },
+    {
+      authors: 'Hyojung Ahn',
+      title:
+        'Analysis of performance and thermal-fluid characteristics in a planar-type solid oxide fuel cell',
+      venue: 'Journal of Fuel Cell Science and Technology',
+      year: 2012,
+    },
+  ],
+
+  // 공동저자 논문 (Co-author, selected) — 영문 공통
+  coAuthorPublications: [
+    {
+      authors: 'Seokman Hong, et al., Hyojung Ahn',
+      title:
+        'Realization of selector-memory bi-functionality with self-current regulation utilizing poly-crystalline GST electrolyte for memristor hardware development',
+      venue: 'Advanced Materials Interfaces',
+      year: 2024,
+    },
+    {
+      authors: 'J. Kang, et al., Hyojung Ahn',
+      title:
+        'Monolithic 3D integration of 2D materials-based electronics toward ultimate edge computing solutions',
+      venue: 'Nature Materials',
+      year: 2023,
+    },
+    {
+      authors: 'S. Han, Y. Meng, Z. Xu, J.S. Kim, Y. Li, I.P. Roh, Hyojung Ahn, D.H. Kim, S.H. Bae',
+      title: 'Freestanding membranes for unique functionality in electronics',
+      venue: 'ACS Applied Electronic Materials',
+      year: 2023,
+    },
+  ],
+
+  // 국내 학술지 논문 (selected) — 영문 공통
+  domesticPublications: [
+    'Ku, SungKwan; Ahn, Hyojung; Joo, Yohann; Hong, Seokmin. “Test and Evaluation Methods for Navigation System Errors of Small UAVs.” Journal of Korean Navigation and Port Research, 2021.',
+    'Kim, Myungeon; Ahn, Hyojung. “Status of Quality Management and Validation of AI Data.” GEO Data Journal, 2021.',
+    'Ku, SungKwan; Ahn, Hyojung; Kim, Dohyun. “Evaluation of Navigation Error Requirements in UTM Environments Using the SE Process.” Journal of Korean Navigation and Port Research, 28(4): 47–54, 2020.',
+    'Ku, SungKwan; Ahn, Hyojung; Lee, DongJin. “Influencing Factors of Low-Altitude Unmanned Aircraft Navigation Using AHP.” International Promotion Agency of Culture Technology, 8(1): 173–181, 2020.',
+    'Ahn, Hyojung. “Machine-Learning-Based Anomaly Diagnosis Techniques for Aerospace Systems.” Aerospace Technology & Information, 26(3): 25–30, 2019.',
+    'Ahn, Hyojung; Won, Jungyoon. “Trends in ICAO Policy Development for Unmanned Aircraft Systems.” Transactions of the Korean Society of Mechanical Engineers C, 4(2): 117–122, 2016.',
+    'Ahn, Hyojung. “A Study on Category Classification of Civil Unmanned Aircraft Systems.” Journal of the Korean Society for Aeronautical & Space Sciences, 43(7): 657–667, 2015.',
+    'Ahn, Hyojung; Park, Jonghyuk. “Regulatory Status and Certification Approaches for Small Unmanned Aerial Vehicles.” Transactions of the Korean Society of Mechanical Engineers C, 3(1): 71–78, 2015.',
+    'Ahn, Hyojung; Park, Jonghyuk; Yoo, Seungwoo. “Trends in Certification Systems and Regulations for Civil Unmanned Aircraft Systems.” Journal of the Korean Society for Aeronautical & Space Sciences, 42(10): 893–901, 2014.',
+    'Ahn, Hyojung. “Status of Fuel Cell Development and Certification for Aircraft Applications.” Aerospace Promotion, 61(2): 81–91, 2013.',
+    'Ahn, Hyojung. “A Study on the Development Status of Electric Propulsion Aircraft.” Aerospace Technology & Information, 19(4): 41–45, 2012.',
+    'Ahn, Hyojung; Park, Jonghyuk. “Proposal for a Korean Commercial Space Transportation Act Based on U.S. Legislative Analysis.” Journal of Aerospace System Engineering, 5(1): 24–29, 2011.',
+    'Ahn, Hyojung; Park, Jonghyuk. “Market Analysis and Future Outlook of the Commercial Space Transportation Industry.” Aerospace Promotion, 57: 131–145, 2011.',
+    'Ahn, Hyojung. “Operational Concept of High-Altitude Long-Endurance Solar UAV Using Directed Energy.” New & Renewable Energy, 7(3): 59–66, 2011.',
+    'Ahn, Hyojung; Cha, Sukwon. “Thermal-Fluid Analysis and Performance Evaluation of Planar Solid Oxide Fuel Cells (Single-Channel and Multi-Channel).” Transactions of the Korean Society of Mechanical Engineers B, 31(12): 1033–1041, 2007.',
+    'Ahn, Hyojung; Ji, Hyunjin; Bae, Jungmyun; Cha, Sukwon. “Control Strategy and Performance Evaluation of a Fuel-Cell–Solar-Cell Hybrid Vehicle.” Transactions of the Korean Society of Mechanical Engineers B, 31(10): 840–847, 2007.',
   ],
 
   // 주요 특허 (등록, selected)
