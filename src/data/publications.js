@@ -45,6 +45,36 @@ export const publications = [
     venue: 'IEEE Sensors Journal',
   },
   {
+    year: 2026,
+    type: 'Conference',
+    title: 'Fine-Grained Building Damage Assessment from Bi-Temporal Satellite Imagery',
+    authors: 'Jiwon Han, Hyojung Ahn',
+    venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+  },
+  {
+    year: 2026,
+    type: 'Conference',
+    title:
+      'Selective Rotation-Equivariant Refinement for Oriented Object Detection with Frozen Remote-Sensing Backbones',
+    authors: 'Jimin Kim, Hyojung Ahn',
+    venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+  },
+  {
+    year: 2026,
+    type: 'Conference',
+    title: 'ViK-Mamba: Sensorless Grip-Force Adaptation via Visual-Kinematic Discrepancy',
+    authors: 'Yeongseok Ko, Hyojung Ahn',
+    venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+  },
+  {
+    year: 2026,
+    type: 'Conference',
+    title:
+      'Reliability-Aware Intervention Risk Assessment for UAV Swarms Under Low-Rate Telemetry',
+    authors: 'Arshad Farhad, Hyojung Ahn',
+    venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+  },
+  {
     year: 2025,
     type: 'Journal',
     title:
