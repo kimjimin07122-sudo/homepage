@@ -8,6 +8,7 @@
 //    authors: '저자, 저자, ...',
 //    venue: '학술지/학회명',
 //    link: 'https://...',        // 없으면 생략
+//    award: '수상명',            // 있으면 배지로 표시, 없으면 생략
 //  }
 // ─────────────────────────────────────────────
 
@@ -73,6 +74,15 @@ export const publications = [
       'Reliability-Aware Intervention Risk Assessment for UAV Swarms Under Low-Rate Telemetry',
     authors: 'Arshad Farhad, Hyojung Ahn',
     venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+  },
+  {
+    year: 2026,
+    type: 'Conference',
+    title:
+      'Intelligent Onboard Crater Detection for Lunar Exploration Systems Using Knowledge Distillation',
+    authors: 'Isu Jeong, Seulki Lee, Hyojung Ahn',
+    venue: '3rd IAA Conference on AI in and for Space, Jeju, South Korea',
+    award: 'Best Student Award',
   },
   {
     year: 2025,

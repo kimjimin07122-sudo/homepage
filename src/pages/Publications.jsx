@@ -62,6 +62,11 @@ export default function Publications() {
                             ) : (
                               p.title
                             )}
+                            {p.award && (
+                              <span className="pub__award">
+                                <i className="fa-solid fa-trophy"></i> {p.award}
+                              </span>
+                            )}
                           </h3>
                           <p className="pub__authors">{p.authors}</p>
                           <p className="pub__venue">{p.venue}</p>
