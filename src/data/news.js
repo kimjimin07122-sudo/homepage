@@ -14,9 +14,27 @@ export const newsTagLabels = {
   세미나: { ko: '세미나', en: 'Seminar' },
 }
 
-// 연구실 소식(보도자료 등 전문이 있는 글) — 클릭하면 /news/:slug 상세 페이지로 이동.
+// 연구실 소식 — slug 가 있으면 /news/:slug 상세 페이지로, link 가 있으면 외부 기사로 이동.
 // 본문은 보도자료 원문(국문)이라 번역 없이 그대로 싣는다 (다른 언어에서도 동일하게 노출).
 export const articles = [
+  {
+    date: '2026-09-07',
+    tag: '소식',
+    title: {
+      ko: '세계 우주·AI 전문가 제주 모여 미래 논의',
+      en: 'Global Space and AI Experts Gather in Jeju to Discuss the Future',
+    },
+    link: 'https://www.newsnjeju.com/news/articleView.html?idxno=298886',
+  },
+  {
+    date: '2026-08-26',
+    tag: '소식',
+    title: {
+      ko: 'AI에 우주탐사 판단 어디까지 맡길까… 17개국 300명 제주 집결',
+      en: 'How Far Should AI Be Trusted with Space-Exploration Decisions? 300 Experts From 17 Countries Gather in Jeju',
+    },
+    link: 'https://www.fnnews.com/news/202608261743131950',
+  },
   {
     slug: 'lab-news-1',
     tag: '소식',

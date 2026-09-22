@@ -27,16 +27,31 @@ export default function News() {
           <div className="container">
             <SectionHeading eyebrow={t('Lab News', '')} title={t('연구실 소식', 'Lab News')} />
             <ul className="news-list" data-reveal-stagger>
-              {sortedArticles.map((a) => (
-                <li key={a.slug}>
-                  <Link to={`/news/${a.slug}`} className="news news--link">
+              {sortedArticles.map((a) => {
+                const content = (
+                  <>
                     <span className={`news__tag news__tag--${a.tag}`}>{t(newsTagLabels[a.tag])}</span>
                     <span className="news__title">{t(a.title)}</span>
                     <span className="news__date">{a.date}</span>
-                    <i className="fa-solid fa-arrow-right news__arrow"></i>
-                  </Link>
-                </li>
-              ))}
+                    <i
+                      className={`fa-solid ${a.link ? 'fa-arrow-up-right-from-square' : 'fa-arrow-right'} news__arrow`}
+                    ></i>
+                  </>
+                )
+                return (
+                  <li key={a.slug ?? a.link}>
+                    {a.slug ? (
+                      <Link to={`/news/${a.slug}`} className="news news--link">
+                        {content}
+                      </Link>
+                    ) : (
+                      <a href={a.link} target="_blank" rel="noreferrer" className="news news--link">
+                        {content}
+                      </a>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </section>
