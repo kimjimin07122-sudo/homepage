@@ -18,6 +18,15 @@ export const newsTagLabels = {
 // 본문은 보도자료 원문(국문)이라 번역 없이 그대로 싣는다 (다른 언어에서도 동일하게 노출).
 export const articles = [
   {
+    date: '2026-10-22',
+    tag: '소식',
+    title: {
+      ko: '제주대 연구자 20명, ‘세계 상위 2%’ 선정',
+      en: '20 Jeju National University Researchers Named Among World’s Top 2%',
+    },
+    link: 'https://www.newsjeju.net/news/articleView.html?idxno=427313',
+  },
+  {
     date: '2026-09-07',
     tag: '소식',
     title: {

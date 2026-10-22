@@ -15,7 +15,6 @@ import photoArshad from './people/arshad-farhad.jpg'
 import photoKangDayeon from './people/kang-dayeon.jpg'
 import photoKoYongseok from './people/ko-yongseok.jpg'
 import photoKimJimin from './people/kim-jimin.jpg'
-import photoByeonSua from './people/byeon-sua.jpg'
 import photoHanJiwon from './people/han-jiwon.jpg'
 import photoKimRyunhee from './people/kim-ryunhee.jpg'
 
@@ -64,7 +63,7 @@ export const professor = {
   // 보유 자격
   certifications: [
     {
-      period: { ko: '2023.12 – 현재', en: '2023.12 – Present' },
+      period: { ko: '2013.12 – 현재', en: '2013.12 – Present' },
       name: {
         ko: '미국품질협회(ASQ) 국제품질기사 (Certified Quality Engineer, CQE) 취득 및 활동',
         en: 'Certified Quality Engineer (CQE), American Society for Quality (ASQ)',
@@ -384,14 +383,6 @@ export const members = [
     role: undergradRole,
     group: 'Undergraduate Researcher',
     photo: photoKimJimin,
-    email: '',
-  },
-  {
-    name: '변수아',
-    nameEn: 'Byeon Sua',
-    role: undergradRole,
-    group: 'Undergraduate Researcher',
-    photo: photoByeonSua,
     email: '',
   },
   {
