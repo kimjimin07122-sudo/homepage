@@ -21,8 +21,8 @@ export const articles = [
     date: '2026-10-22',
     tag: '소식',
     title: {
-      ko: '제주대 연구자 20명, ‘세계 상위 2%’ 선정',
-      en: '20 Jeju National University Researchers Named Among World’s Top 2%',
+      ko: '인공지능학과 안효정 교수, “전세계 상위 2% 연구자(World’s Top 2% Scientists) 선정”',
+      en: 'Prof. Hyojung Ahn, Dept. of AI, Named Among World’s Top 2% Scientists',
     },
     link: 'https://www.newsjeju.net/news/articleView.html?idxno=427313',
   },
