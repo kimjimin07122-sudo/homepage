@@ -1303,6 +1303,7 @@ html[lang='en'] .page-header--article .page-header__title {
   font-size: 0.85rem;
   color: var(--muted);
   text-align: center;
+  white-space: pre-line;
 }
 
 .photo-card--empty {
@@ -1370,6 +1371,7 @@ html[lang='en'] .page-header--article .page-header__title {
   text-align: center;
   color: #fff;
   font-size: 0.9rem;
+  white-space: pre-line;
 }
 
 /* 배경 박스 없이 사진 우측 상단 안쪽에 겹쳐 놓는다.
