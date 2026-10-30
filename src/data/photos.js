@@ -10,13 +10,13 @@ import sportsCompetition from './sports_competition.jpg'
 
 export const photos = [
   {
-    src: openmember,
-    date: `연구원 단체 사진
-2026.05.26`,
-  },
-  {
     src: sportsCompetition,
     date: `인공지능학과 (안효정 교수, 김경언 조교, 장민주 조교) 우승
 2026.10.30`,
+  },
+  {
+    src: openmember,
+    date: `연구원 단체 사진
+2026.05.26`,
   },
 ]
