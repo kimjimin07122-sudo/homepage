@@ -15,8 +15,21 @@ export const newsTagLabels = {
 }
 
 // 연구실 소식 — slug 가 있으면 /news/:slug 상세 페이지로, link 가 있으면 외부 기사로 이동.
+// 출처가 여러 건이면 link 대신 links: [{ label, url }, ...] 를 쓴다 (출처별 버튼으로 표시됨).
 // 본문은 보도자료 원문(국문)이라 번역 없이 그대로 싣는다 (다른 언어에서도 동일하게 노출).
 export const articles = [
+  {
+    date: '2026-11-05',
+    tag: '수상',
+    title: {
+      ko: '안효정 교수 지도, 인공지능학과 학생들, 치매환자 돕는 AI 기억인형 개발, 전국 1등, 장관상 수상, 장학금 500만원',
+      en: 'Prof. Hyojung Ahn’s AI Dept. Students Develop AI “Memory Doll” to Help Dementia Patients — National 1st Place, Minister’s Award, KRW 5M Scholarship',
+    },
+    links: [
+      { label: 'BBS', url: 'https://news.bbsi.co.kr/news/articleView.html?idxno=4118289' },
+      { label: '뉴시스', url: 'https://www.newsis.com/view/NISX20261105_0003856169' },
+    ],
+  },
   {
     date: '2026-10-22',
     tag: '소식',

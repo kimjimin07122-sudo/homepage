@@ -28,6 +28,33 @@ export default function News() {
             <SectionHeading eyebrow={t('Lab News', '')} title={t('연구실 소식', 'Lab News')} />
             <ul className="news-list" data-reveal-stagger>
               {sortedArticles.map((a) => {
+                // links(복수 출처)가 있으면 행 전체를 링크로 감싸지 않고, 출처별 버튼을 따로 보여준다.
+                if (a.links) {
+                  return (
+                    <li key={a.links.map((l) => l.url).join(',')}>
+                      <div className="news">
+                        <span className={`news__tag news__tag--${a.tag}`}>{t(newsTagLabels[a.tag])}</span>
+                        <span className="news__title">{t(a.title)}</span>
+                        <span className="news__date">{a.date}</span>
+                        <span className="news__sources">
+                          {a.links.map((l) => (
+                            <a
+                              key={l.url}
+                              href={l.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="news__source"
+                            >
+                              {l.label}
+                              <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                          ))}
+                        </span>
+                      </div>
+                    </li>
+                  )
+                }
+
                 const content = (
                   <>
                     <span className={`news__tag news__tag--${a.tag}`}>{t(newsTagLabels[a.tag])}</span>

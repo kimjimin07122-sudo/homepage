@@ -7,11 +7,17 @@
 
 import openmember from './openmember.jpg'
 import sportsCompetition from './sports_competition.jpg'
+import aiMemoryDollAward from './ai-memory-doll-award.jpg'
 
 export const photos = [
   {
+    src: aiMemoryDollAward,
+    date: `AI 기억인형 ‘모리’ 개발팀, 과기정통부 장관상 수상
+2026.11.05`,
+  },
+  {
     src: sportsCompetition,
-    date: `인공지능학과 (안효정 교수, 김경언 조교, 장민주 조교) 우승
+    date: `인공지능학과 (안효정 교수, 김경언 조교, 장민주 조교) 우승
 2026.10.30`,
   },
   {

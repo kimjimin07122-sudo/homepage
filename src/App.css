@@ -1241,6 +1241,34 @@ html[lang='en'] .page-header--article .page-header__title {
   transform: translateX(3px);
 }
 
+.news__sources {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.news__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  color: var(--blue-600);
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: border-color 0.16s ease, color 0.16s ease;
+}
+
+.news__source i {
+  font-size: 0.68rem;
+}
+
+.news__source:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
 /* News 페이지 — 소식 섹션과 모집 섹션을 배경색 대신 구분선으로만 나눔 */
 /* 소식 상세 페이지 본문 */
 .article-body {
